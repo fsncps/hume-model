@@ -1,7 +1,10 @@
 # HumeSim — Interactive Economic Simulation
 
-**HumeSim** is a lightweight, terminal-based economic simulation app built written in python and using [Textual](https://github.com/Textualize/textual) for its TUI. It is built for and used in conjunction with an academic paper on David Hume and his criticism of a prevalent mercantilist economic stance. It identifies a number of macroeconomic quantities and their functional relationships in Hume's *On Interest* and aims to model the trends and correlations for these variables in a dynamic simulation model.  It allows you to:
+**HumeSim** is a lightweight, terminal-based economic simulation app written in python and uses the amazing [Textual](https://github.com/Textualize/textual) for a nice TUI. 
 
+It is built for and used in conjunction with an academic paper on David Hume and his criticism of a prevalent mercantilist economic stance. The paper identifies a number of macroeconomic quantities and their functional relationships in Hume's *On Interest* and the model aims to test and illustrate the trends and correlations for these variables in a dynamic simulation. 
+
+It allows you to:
 - Input initial endogenous macroeconomic variables, parameters and exogenous demand/supply shocks.
 - Run dynamic iterations of the model.
 - Manipulate values between each cycle iteration.
@@ -126,4 +129,6 @@ Any contributions, tests or corrections welcome.
 
 ---
 
+## 📽️ Demo
 
+![HumeSim Demo](docs/demo.gif)
