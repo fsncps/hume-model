@@ -1,0 +1,37 @@
+# app/config.toml
+
+[defaults]
+
+# Initial Values
+Y = 1.0       # Output
+C = 0.6       # Consumption
+I = 0.4       # Investment
+K = 7.0       # Capital
+r = 0.03      # Interest rate
+s = 0.2       # Saving rate
+p = 0.05      # Profit rate
+theta = 0.5   # Wealth concentration
+M = 1.0       # Money supply
+P = 1.0       # Price level
+pi = 0.0      # Inflation
+K_last = 5.0  # Lagged capital
+P_last = 1.0  # Lagged price
+
+# Parameters
+[parameters]
+alpha = 0.33
+beta = 0.96
+delta = 0.05
+gamma = 0.004
+sigma = 1.0
+
+# Shocks
+[shocks]
+A-mean = 1.0
+A-stderr = 0.01
+D-mean = 1.0
+D-stderr = 0.02
+
+[export]
+path = "/home/fsncps/Documents"  # or an absolute path on Windows
+

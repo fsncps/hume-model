@@ -1,0 +1,56 @@
+# Special
+*.cast
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.pipenv/
+pipenv/
+
+# Jupyter Notebook checkpoints (if ever used)
+.ipynb_checkpoints/
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# MyPy / static analysis
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Logs and exports
+*.log
+*.csv
+exports/
+hume_export-*.csv
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*~
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+

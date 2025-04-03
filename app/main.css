@@ -1,0 +1,114 @@
+/* LEFT PANE: initial values and parameters */
+#left-pane {
+   margin: 0 0 0 2;
+    width: 30vw;
+}
+
+/* Initial values block (top left) */
+#init-values {
+    padding-bottom: 1;
+}
+
+/* Parameters block (middle left) */
+#param-values {
+    padding-bottom: 1;
+}
+#form-container {
+   height: 75vh;
+   margin: 0 0 0 2;
+   padding: 0 0 0 4;
+    border: round navajowhite;
+}
+.field-row {
+    height: 1;
+}
+
+Input {
+    border: none;
+    margin: 0;
+    padding: 0 1;
+}
+.field-label {
+    width: 10vw;
+    content-align: right middle;
+    padding-right: 1;
+}
+
+.field-input {
+    width: 10;
+    min-height: 1;
+    padding: 0 1;
+    background: #2f3546;
+}
+
+/* RIGHT PANE: output tables and equations */
+#right-pane {
+    width: 70vw;
+}
+
+/* Live output table (top right) */
+#output-row {
+    padding-bottom: 1;
+}
+
+/* Correlation table (middle right) */
+#corr-row {
+    padding-bottom: 1;
+}
+
+
+#eq-markdown {
+    padding-left: 2;
+    padding-top: 0;
+}
+.equation-label {
+    text-style: italic;
+}
+
+.title-label {
+    text-style: bold;
+    margin: 1 0 1 4;
+    color: darkorange;
+}
+
+#button-container {
+   margin: 0 5 2 5;
+}
+
+#iteration-counter {
+   margin-left: 10;
+   color: #ffa357;
+}
+
+#moments-table {
+    width: 80%;
+
+}
+
+Widget {
+    background: transparent;
+}
+
+Button {
+   background: #2f3546;
+   height: 3;
+   margin: 0 1 0 1;
+   min-width: 15;
+}
+
+
+#correlations-container {
+   margin: 0 1 0 1;
+border: round navajowhite;
+}
+
+#moments-container {
+   margin: 0 1 0 1;
+border: round navajowhite;
+}
+
+#init-values {
+height: 30vh;
+}
+
+
