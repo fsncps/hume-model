@@ -8,25 +8,26 @@ from app.config_loader import load_config
 
 
 
+
 def resolve_export_path(path_str: str | None) -> Path:
-    """Resolve export path from config or fallbacks."""
+    """Resolve export path from config or fallback to a default directory in the user's home."""
     timestamp = datetime.now().strftime("%Y-%m-%d-%H%M%S")
     filename = f"hume_export-{timestamp}.csv"
 
     if path_str:
         path = Path(path_str).expanduser()
         if path.is_absolute():
-            if path.is_dir() or str(path).endswith(("/", "\\")):  # ✅ explicitly a dir
+            # If it's a directory or ends with a slash, treat it as a directory
+            if path.is_dir() or str(path).endswith(("/", "\\")):
                 return path / filename
+            # Otherwise, assume it's a full file path
             return path.with_name(filename)
 
-    # Fallback to XDG or APPDATA
-    if os.name == "nt":
-        base_dir = Path(os.environ.get("APPDATA", Path.home()))
-    else:
-        base_dir = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share"))
-
-    return base_dir / "hume-sim" / filename
+    # Fallback to ~/hume-sim/
+    home_dir = Path.home()
+    default_dir = home_dir / "hume-sim"
+    default_dir.mkdir(parents=True, exist_ok=True)  # Ensure directory exists
+    return default_dir / filename
 
 def export_simulation(
     moments: list[dict[str, float]],

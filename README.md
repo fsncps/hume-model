@@ -15,14 +15,14 @@ It allows you to:
 
 ## Requirements
 
-- Python 3.12+
-- textual (>= 0.45.0)
+- Python3.12+
+- textual (0.45.0+)
 - toml
 
 
 ## Setup
 
-Make sure you have Python 3.12. Upgrade or install using your system’s package manager (apt, brew, etc.), or download the installer from python.org for Windows.
+Make sure you have Python3.12. Upgrade or install using your system’s package manager (apt, brew, etc.), or download the installer from python.org for Windows.
 
 It's recommended to use a virtual environment (since you might have stuff installed which depends on a different version of Textual or toml):
 
@@ -78,11 +78,10 @@ For Windows, an absolute path is required:
 path = "C:\users\foo\bar\"  # full path
 ```
 
-- If a directory is given, the export will be saved as:
-  `hume_export-YYYY-MM-DD-HHMMSS.csv` inside that directory.
+- The export saved as `hume_export-YYYY-MM-DD-HHMMSS.csv` inside the configured directory.
 - If no path is configured, it defaults to:
-  - Linux: `$XDG_DATA_HOME/hume-sim/`
-  - Windows: `%APPDATA%/hume-sim/`
+  - Linux/macOS/BSD etc.: `$HOME`
+  - Windows: `%USERPROFILE%`
 - If the config file is otherwise faulty or missing, the simulation variable values fall back to the originally set defaults
 
 ---
@@ -99,7 +98,7 @@ Each export includes:
 
 ## Development Notes
 
-Adding / modifying equations is fairly easy. To modify one of the behavioural equations, simply find and edit the respective function in `equations.py`, e.g.:
+Adding or modifying equations is fairly easy. To modify one of the behavioural equations, simply find and edit the respective function in `equations.py`, e.g.:
 
 ```python
 def eq_production(A: float, K: float, alpha: float) -> float:
