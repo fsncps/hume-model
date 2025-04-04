@@ -16,8 +16,8 @@ It allows you to:
 ## Requirements
 
 - Python 3.12+
-- `textual` (>= 0.45.0)
-- `toml`
+- textual (>= 0.45.0)
+- toml
 
 
 ## Setup
