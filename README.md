@@ -1,15 +1,14 @@
 # HumeSim — Interactive Economic Simulation
 
-**HumeSim** is a lightweight, terminal-based economic simulation app written in python and uses the amazing [Textual](https://github.com/Textualize/textual) for a nice TUI. 
+**HumeSim** is a lightweight, terminal-based economic simulation model written in python. It uses the amazing [Textual](https://github.com/Textualize/textual) for a nice TUI. 
 
-It is built for and used in conjunction with an academic paper on David Hume and his criticism of a prevalent mercantilist economic stance. The paper identifies a number of macroeconomic quantities and their functional relationships in Hume's *On Interest* and the model aims to test and illustrate the trends and correlations for these variables in a dynamic simulation. 
+The app is built for and used in conjunction with an academic paper on David Hume and his criticism of a prevalent mercantilist economic stance during 18th century, when a feudal order was gradually replaced by nation and merchant states. The paper identifies a number of macroeconomic quantities and their functional relationships in Hume's *On Interest*, whereas the model aims to test and illustrate the trends and correlations for these variables in a dynamic simulation. 
 
 It allows you to:
-- Input initial endogenous macroeconomic variables, parameters and exogenous demand/supply shocks.
-- Run dynamic iterations of the model.
-- Manipulate values between each cycle iteration.
-- View theoretical moments (mean, std. dev., variance) of all variables.
-- Analyze Pearson correlation coefficient matrices between variables.
+- Input initial endogenous macroeconomic variables and parameters, and exogenous demand/supply shocks.
+- Manually run iterations on the model.
+- Manipulate values between each iteration cycle to test various scenarios.
+- View theoretical moments (mean, std. dev., variance) and Pearson correlation coefficient matrices for the variables.
 - Export results to a structured CSV.
 
 ---
@@ -21,14 +20,14 @@ It allows you to:
 - `toml`
 
 
-## Setup (Recommended)
+## Setup
 
-Install Python 3.12 using your system’s package manager (apt, brew, etc.), or download the installer from python.org for Windows.
+Make sure you have Python 3.12. Upgrade or install using your system’s package manager (apt, brew, etc.), or download the installer from python.org for Windows.
 
-It's strongly recommended to use a virtual environment:
+It's recommended to use a virtual environment (since you might have stuff installed which depends on a different version of Textual or toml):
 
 ```bash
-# Create a virtual environment (in .venv/)
+# Create a virtual environment
 python3 -m venv .venv
 
 # Activate the virtual environment
@@ -53,13 +52,7 @@ python -m app
 
 ## Configuration
 
-The default config file is:
-
-```
-config.toml
-```
-
-In this file you can set the default values for all variables and the save path for the CSV export:
+Default variable values and the CSV export path are set in `config.toml`:
 
 Example:
 ```toml
@@ -90,6 +83,7 @@ path = "C:\users\foo\bar\"  # full path
 - If no path is configured, it defaults to:
   - Linux: `$XDG_DATA_HOME/hume-sim/`
   - Windows: `%APPDATA%/hume-sim/`
+- If the config file is otherwise faulty or missing, the simulation variable values fall back to the originally set defaults
 
 ---
 
@@ -98,28 +92,28 @@ path = "C:\users\foo\bar\"  # full path
 Each export includes:
 
 - Theoretical moments table
-- Correlation matrix
+- Pearson correlation matrix
 - Iteration snapshots (all variables over time)
 
 ---
 
 ## Development Notes
 
-Adding / modifying equations is fairly easy. To modify one of the behavioural equations, simply find and modify the respective function in `equations.py`:
+Adding / modifying equations is fairly easy. To modify one of the behavioural equations, simply find and edit the respective function in `equations.py`, e.g.:
 
 ```python
 def eq_production(A: float, K: float, alpha: float) -> float:
     """Y = A * K^alpha"""
     return A * (K ** alpha)
 ```
-...and update the corespondig line in `ui/iteration_widget.py`:
+...and update the corresponding line in `ui/iteration_widget.py`:
 ```python
 Y = eq_output(A, inputs["K"], params["alpha"])
 ```
 
-Depending on how the equations are modified, the order of computations might need to be adapted. In the above example, A must be defined or calculated earlier, and K is the input-field value of the current iteration.
+Depending on how the equations are modified, the order of computations might have to be adapted. In the above example, *A* must be defined or calculated earlier, and *K* is the input-field value of the current iteration.
 
-When adding new variables for a new computation, also adapt the tuples VARIABLE_KEYS and UPDATES.
+When adding new variables for a new computation, also adapt the tuples `VARIABLES`, `VARIABLE_KEYS` and `UPDATES`.
 
 There are five model parameters defined in config.toml, though only two are currently used in the functional relationships. The rest are available for extensions or experimental equations.
 
