@@ -112,7 +112,7 @@ Y = eq_output(A, inputs["K"], params["alpha"])
 
 Depending on how the equations are modified, the order of computations might have to be adapted. In the above example, *A* must be defined or calculated earlier, and *K* is the input-field value of the current iteration.
 
-When adding new variables for a new computation, also adapt the tuples `VARIABLES`, `VARIABLE_KEYS` and `UPDATES`.
+When adding new variables for a new computation, also adapt the tuples/dicts `VARIABLES`, `VARIABLE_KEYS`, `update` and `UPDATES`. Look at the iterations module.
 
 There are five model parameters defined in config.toml, though only two are currently used in the functional relationships. The rest are available for extensions or experimental equations.
 

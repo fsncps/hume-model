@@ -29,11 +29,11 @@ VARIABLES = [
     ("s",      "Saving Rate s",           " = C/Y"),
     ("p",      "Profit Rate p",           " = α ⋅ Y/K"),
     ("theta",  "Wealth Concentration θ",  " = K/M"),
-    ("M",      "Money Supply M",          " (exogen)"),
     ("P",      "Price Level P",           " = M/Y"),
     ("pi",     "Inflation π",             " = P/P₋₁ − 1"),
-    ("K_last", "Lagged K",                ""),
-    ("P_last", "Lagged P",                ""),
+    ("M",      "Money Supply M",          " (assumed fixed)"),
+    ("K_last", "Lagged K",                " (K₋₁)"),
+    ("P_last", "Lagged P",                " (P₋₁)"),
 ]
 
 PARAMETERS = [

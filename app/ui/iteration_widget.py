@@ -127,3 +127,27 @@ class IterationControls(Vertical):
         self.app.moments_widget.update_from_simulation(self.simulation_state)
         self.app.corr_widget.update_from_simulation(self.simulation_state)
 
+
+# EQUATION_MARKDOWN = """
+# ### Modellgleichungen
+#
+# | Beschreibung              | Gleichung                            |
+# |---------------------------|---------------------------------------|
+# | Produktion Y              | `Y = A * K^alpha`                    |
+# | Konsum C                  | `C = (1 - s) * Y * D`                |
+# | Investition I             | `I = s * Y * D`                      |
+# | Gesamtnachfrage Y         | `Y = C + I`                          |
+# | Kapital K                 | `K = (1 - delta) * K(-1) + I`        |
+# | Profit p                  | `p = alpha * Y / K`                  |
+# | Zins r                    | `r = p - gamma`                      |
+# | Sparrate s                | `s = C / Y`                          |
+# | Kreditangebot K           | `K = s * Y`                          |
+# | Vermögenskonz. θ          | `θ = K / M`                          |
+# | Geldmenge M               | `M = ... (exogen)`                  |
+# | Preisniveau P             | `P = M / Y`                          |
+# | Inflation π               | `π = P / P(-1) - 1`                  |
+# | Arbeit A                  | `A = ... (exogen)`                  |
+# | Nachfrage D               | `D = ... (exogen)`                  |
+# """
+#
+#

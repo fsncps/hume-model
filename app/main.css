@@ -7,19 +7,23 @@
 /* Initial values block (top left) */
 #init-values {
     padding-bottom: 1;
+    height: 5fr;
 }
 
 /* Parameters block (middle left) */
 #param-values {
     padding-bottom: 1;
+
+    height: 2fr;
 }
 #form-container {
-   height: 75vh;
+   height: 86vh;
    margin: 0 0 0 2;
    padding: 0 0 0 4;
-    border: round navajowhite;
+    border: round #b7bdf8;
 }
 .field-row {
+
     height: 1;
 }
 
@@ -38,7 +42,7 @@ Input {
     width: 10;
     min-height: 1;
     padding: 0 1;
-    background: #2f3546;
+    background: #494d64;
 }
 
 /* RIGHT PANE: output tables and equations */
@@ -68,7 +72,7 @@ Input {
 .title-label {
     text-style: bold;
     margin: 1 0 1 4;
-    color: darkorange;
+    color: #cdd6f4;
 }
 
 #button-container {
@@ -77,34 +81,42 @@ Input {
 
 #iteration-counter {
    margin-left: 10;
-   color: #ffa357;
+   color: #eed49f;
 }
 
 #moments-table {
     width: 80%;
+}
 
+#correlations-table {
+color: #eed49f;
+}
+Screen {
+    background: #363a4f;
 }
 
 Widget {
-    background: transparent;
+    background: #363a4f;
+    color: #cad3f5;
 }
 
 Button {
-   background: #2f3546;
+   background: #313244;
    height: 3;
    margin: 0 1 0 1;
    min-width: 15;
+   border: tall;
 }
 
 
 #correlations-container {
    margin: 0 1 0 1;
-border: round navajowhite;
+border: round #b7bdf8;
 }
 
 #moments-container {
    margin: 0 1 0 1;
-border: round navajowhite;
+border: round #b7bdf8;
 }
 
 #init-values {

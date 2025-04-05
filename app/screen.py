@@ -26,7 +26,7 @@ class SimScreen(Screen):
                     id="form-container"
                 ),
                 Vertical(
-                    Static("Simulation", id="sim-label", classes="title-label"),
+                    # Static("Simulation", id="sim-label", classes="title-label"),
                     IterationControls(id="sim-controls"),
                     id="button-container"
                 ),
